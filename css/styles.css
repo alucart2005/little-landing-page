@@ -124,8 +124,49 @@ main footer .sci li a:hover {
 }
 
 @media (max-width: 800px) {
-  main header .navigation li a {
-    margin-left: 25px;
+  main header .toggle {
+    position: relative;
+    width: 32px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+  }
+  main header .toggle::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    transform: translateY(-8px);
+    transition: 0.5s;
+  }
+  main header .toggle::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    transform: translateY(8px);
+    transition: 0.5s;
+    box-shadow: 0 -8px 0 #fff;
+  }
+  main header .toggle.toggle--on {
+    position: fixed;
+    right: 40px;
+  }
+  main header .toggle.toggle--on::before {
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+  }
+  main header .toggle.toggle--on::after {
+    transform: translateY(0px) rotate(-45deg);
+    box-shadow: 0 0 0 #fff;
+  }
+  main header .navigation {
+    display: none;
   }
   main .content {
     flex-direction: column;

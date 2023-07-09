@@ -122,16 +122,52 @@ main{
   }
  }
 }
-
 @media (max-width: 800px){
   main{
     header{
-      .navigation{
-        li{
-          a{
-            margin-left: 25px;
+      .toggle{
+        position: relative;
+        width: 32px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        cursor: pointer;
+        &::before{
+          content: "";
+          position: absolute;
+          width: 30px;
+          height: 2px;
+          background: #fff;
+          transform: translateY(-8px);
+          transition: 0.5s;
+        }
+        &::after{
+          content: "";
+          position: absolute;
+          width: 30px;
+          height: 2px;
+          background: #fff;
+          transform: translateY(8px);
+          transition: 0.5s;
+          box-shadow: 0 -8px 0 #fff;
+        }
+        &.toggle--on{
+          position: fixed;
+          right: 40px;
+          &::before{
+            transform: translateY(0px) rotate(45deg);
+            box-shadow: 0 0 0 #fff;
+          }
+          &::after{
+            transform: translateY(0px) rotate(-45deg);
+            box-shadow: 0 0 0 #fff;
           }
         }
+      }
+      .navigation{
+        display: none;
       }
     }
     .content{
@@ -176,7 +212,6 @@ main{
     }
   }
 }
-
 @media (max-width: 500px){
   main{
     header{
