@@ -27,7 +27,7 @@ main header {
   z-index: 1000;
 }
 main header .logo {
-  max-width: 80px;
+  max-width: 100px;
 }
 main header .navigation {
   display: flex;
@@ -123,7 +123,7 @@ main footer .sci li a:hover {
   transform: translateY(-5px);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   main header .navigation li a {
     margin-left: 25px;
   }
@@ -136,6 +136,51 @@ main footer .sci li a:hover {
   }
   main .content .text h2 {
     font-size: 4em;
+    text-align: center;
+  }
+  main .content .text p {
+    text-align: justify;
+  }
+  main .content .img {
+    width: 70%;
+  }
+  main footer {
+    flex-direction: row-reverse;
+  }
+  main footer .btn {
+    padding: 10px 20px;
+    background: white;
+    color: #352f2f;
+    font-size: 1em;
+    text-decoration: none;
+    font-weight: 250;
+    border-radius: 10px;
+    transition: 0.35s;
+  }
+  main footer .sci {
+    margin-right: 30px;
+  }
+  main footer .sci li a {
+    font-size: 1.5em;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 500px) {
+  main header .logo {
+    max-width: 80px;
+  }
+  main header .navigation li a {
+    margin-left: 10px;
+  }
+  main .content {
+    flex-direction: column;
+    margin-bottom: 80px;
+  }
+  main .content .text {
+    margin-top: 50px;
+  }
+  main .content .text h2 {
+    font-size: 3em;
     text-align: center;
   }
   main .content .text p {
